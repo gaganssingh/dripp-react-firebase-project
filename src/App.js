@@ -1,5 +1,7 @@
+import Categories from "./components/Categories/Categories.component";
+
 const App = () => {
-  return <div>dripp clothing</div>;
+  return <Categories />;
 };
 
 export default App;
