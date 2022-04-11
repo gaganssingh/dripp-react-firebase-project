@@ -39,7 +39,18 @@ const SignInForm = () => {
         password
       );
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("Incorrect email or password");
+          break;
+        case "auth/user-not-found":
+          alert("Incorrect email or password");
+          break;
+        default:
+          console.error(error);
+      }
+    }
   };
 
   return (
@@ -67,7 +78,7 @@ const SignInForm = () => {
 
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button buttonType="google" onClick={signInWithGoogle}>
+          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
             Google Sign In
           </Button>
         </div>
