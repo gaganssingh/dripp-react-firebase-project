@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400&display=swap");
+
 *,
 *:before,
 *:after {
@@ -6,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px 40px;
@@ -24,5 +26,5 @@ a {
 }
 
 button {
-  font-family: "Lato", sans-serif !important;
+  font-family: "Barlow Semi Condensed", sans-serif !important;
 }
