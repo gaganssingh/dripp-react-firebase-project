@@ -1,5 +1,5 @@
 import DirectoryItem from "../DirectoryItem/DirectoryItem.component";
-import "./Directory.styles.scss";
+import { DirectoryContainer } from "./Directory.styles";
 
 const Directory = () => {
   const categories = [
@@ -31,11 +31,11 @@ const Directory = () => {
   ];
 
   return (
-    <div className="directory-container">
+    <DirectoryContainer>
       {categories.map((category) => (
         <DirectoryItem key={category.id} category={category} />
       ))}
-    </div>
+    </DirectoryContainer>
   );
 };
 
