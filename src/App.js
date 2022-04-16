@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import {
   createUserDocumentFromAuth,
@@ -10,7 +11,6 @@ import Navigation from "./pages/Navigation/Navigation.component";
 import Authentication from "./pages/Authentication/Authentication.component";
 import Shop from "./pages/Shop/Shop.component";
 import Checkout from "./pages/Checkout/Checkout.component";
-import { useDispatch } from "react-redux";
 
 const App = () => {
   const dispatch = useDispatch();
