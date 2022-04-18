@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { fetchCategoriesStartAsync } from "../../store/categories/category.action";
+import { fetchCategoriesStart } from "../../store/categories/category.action";
 import CategoriesPreview from "../CategoriesPreview/CategoriesPreview.component";
 import Category from "../Category/Category.component";
 
@@ -10,7 +10,7 @@ const Shop = () => {
 
   // Fetch products data from the db
   useEffect(() => {
-    dispatch(fetchCategoriesStartAsync());
+    dispatch(fetchCategoriesStart());
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
