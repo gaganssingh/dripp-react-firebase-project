@@ -8,10 +8,6 @@ export const selectCategories = createSelector(
 );
 
 export const selectCategoriesMap = createSelector(
-  // Memoized selector
-  // As long as state of data inside the categories collection is the same
-  // caches the value of the .reduce on the categories collection
-  // if (selectCategories deep-equal the prev selectCategories), dont change
   [selectCategories],
   (categories) =>
     categories.reduce((acc, category) => {
@@ -19,4 +15,9 @@ export const selectCategoriesMap = createSelector(
       acc[title.toLowerCase()] = items;
       return acc;
     }, {})
+);
+
+export const selectIsCategoriesLoading = createSelector(
+  [selectCategoryReducer],
+  (categoriesSlice) => categoriesSlice.isLoading
 );
