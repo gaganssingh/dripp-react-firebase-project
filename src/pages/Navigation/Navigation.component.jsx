@@ -6,19 +6,18 @@ import { signOutUser } from "../../utils/firebase";
 import CartIcon from "../../components/CartIcon/CartIcon.component";
 import { ReactComponent as Logo } from "../../assets/dripp-logo.svg";
 import CartDropdown from "../../components/CartDropdown/CartDropdown.component";
-import { CartContext } from "../../contexts/cart.context";
+import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import {
   LogoContainer,
   NavigationContainer,
   NavLinks,
   NavLink,
 } from "./Navigation.styles";
-import { selectCurrentUser } from "../../store/user/user.selector";
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
-
-  const { isCartOpen } = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   return (
     <>
