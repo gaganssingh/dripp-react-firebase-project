@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import { signOutUser } from "../../utils/firebase";
 import CartIcon from "../../components/CartIcon/CartIcon.component";
 import { ReactComponent as Logo } from "../../assets/dripp-logo.svg";
