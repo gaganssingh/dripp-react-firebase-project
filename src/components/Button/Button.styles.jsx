@@ -47,3 +47,15 @@ export const InvertedButton = styled(BaseButton)`
     border: none;
   }
 `;
+
+export const PayNowButton = styled(BaseButton)`
+  color: white;
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+
+  &:hover {
+    background-color: #28965a;
+    color: white;
+    border: none;
+  }
+`;
