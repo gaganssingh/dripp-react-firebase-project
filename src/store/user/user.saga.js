@@ -5,10 +5,13 @@ import {
   getCurrentUser,
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
+  signOutUser,
 } from "../../utils/firebase";
 import {
   signInFailed,
   signInSuccess,
+  signOutFailed,
+  signOutSuccess,
   signUpFailure,
   signUpSuccess,
 } from "./user.action";
@@ -100,6 +103,22 @@ export function* onSignUpSuccess() {
 }
 
 // --------------------
+// Sign out
+// --------------------
+export function* signOut() {
+  try {
+    yield call(signOutUser);
+    yield put(signOutSuccess());
+  } catch (error) {
+    yield put(signOutFailed(error));
+  }
+}
+
+export function* onSignOutStart() {
+  yield takeLatest(USER_ACTION_TYPES.SIGN_OUT_START, signOut);
+}
+
+// --------------------
 // Aggregator
 // --------------------
 export function* userSagas() {
@@ -109,5 +128,6 @@ export function* userSagas() {
     call(onEmailSignInStart),
     call(onSignUpStart),
     call(onSignUpSuccess),
+    call(onSignOutStart),
   ]);
 }
